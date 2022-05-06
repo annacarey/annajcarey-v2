@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled from "styled-components";
 import { variant } from "styled-system";
 
@@ -8,9 +9,9 @@ interface ContainerProps {
   justifyContent?: string;
   marginTop?: number;
   marginBottom?: number;
-  flexDirection?: string
-  alignItems?: string
-  flex?: number
+  flexDirection?: string;
+  alignItems?: string;
+  flex?: number;
 }
 
 export const Container = styled.div<ContainerProps>`
@@ -40,13 +41,13 @@ interface ImageContainerProps {
   height: string;
   width: string;
   imageUrl: StaticImageData;
-  margin?: number
+  margin?: number;
 }
 
 export const ImageContainer = styled.div<ImageContainerProps>`
   width: ${(props) => props.width};
   height: ${(props) => props.height};
-  margin:${(props) => `${props.margin}px`};
+  margin: ${(props) => `${props.margin}px`};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,7 +74,7 @@ interface TextProps {
 }
 
 export const Text = styled.p<TextProps>`
-  color: ${(props) => props.theme.secondary};
+  color: ${(props) => props.theme.secondaryColor};
   margin: 0px;
   width: 100%;
   z-index: 2;
@@ -95,4 +96,28 @@ export const Text = styled.p<TextProps>`
       },
     },
   })}
+`;
+
+export const NavLink = styled(Text)`
+  color: ${(props) => props.theme.mainColor};
+  padding: 30px;
+  &:hover {
+    color: ${(props) => props.theme.ternary};
+  }
+  @media (max-width: 700px) {
+    padding: 14px;
+  }
+  @media (max-width: 500px) {
+    padding: 10px;
+  }
+  @media (max-width: 450px) {
+    display: none;
+  }
+`;
+
+export const NavigationWrapper = styled.div`
+  display: flex;
+  height: 20vh;
+  align-items: center;
+  justify-content: center;
 `;

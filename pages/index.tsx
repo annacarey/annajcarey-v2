@@ -4,17 +4,18 @@ import writing from "../public/images/writing.jpg";
 import portfolio from "../public/images/portfolio.jpg";
 import github from "../public/images/github.png";
 import about from "../public/images/about.jpg";
-
 import {
   ImageContainer,
   Wrapper,
   Text,
   Container,
 } from "../styles/layout.style";
+import { NavigationBar } from "../src/components/NavigationBar";
 
 const Home: NextPage = () => {
   return (
     <Wrapper>
+      <NavigationBar />
       <ImageContainer height={"60vh"} width={"100%"} imageUrl={jamesTurrell}>
         <Text variant="heading" textAlign="center" padding={30}>
           Full-stack software engineer at the intersection of technology and
